@@ -10,3 +10,7 @@ $ df -h
 ```shell
 $ du -sh 
 ```
+
+```shell
+$ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[M] | sort -n  
+```

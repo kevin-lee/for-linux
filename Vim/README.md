@@ -37,6 +37,7 @@ colorscheme Monokai
 
 ### Molokai
 * Get [molokai](https://github.com/tomasr/molokai "molokai").
+* Install
 
 ```shell
 $ cp colors/molokai.vim ~/.vim/colors/ 
@@ -58,7 +59,6 @@ $ apt-get install vim-gnome
 ## Change Color Theme
 ### Solarized
 * Install it (Check out [Solarized for Vim](#solarized))
-
 * Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
 
 ```
@@ -67,7 +67,6 @@ colorscheme solarized
 
 ### Monokai
 * Install it (Check out [Monokai for Monokai](#monokai))
-
 * Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
 
 ```
@@ -76,7 +75,6 @@ colorscheme Monokai
 
 ### Molokai
 * Install it (Check out [Molokai for Vim](#molokai))
-
 * Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
 
 ```

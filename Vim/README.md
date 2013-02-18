@@ -61,7 +61,7 @@ $ apt-get install vim-gnome
 * Install it (Check out [Solarized for Vim](#solarized))
 * Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
 
-```
+```shell
 colorscheme solarized
 ```
 
@@ -69,7 +69,7 @@ colorscheme solarized
 * Install it (Check out [Monokai for Monokai](#monokai))
 * Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
 
-```
+```shell
 colorscheme Monokai
 ```
 
@@ -77,6 +77,31 @@ colorscheme Monokai
 * Install it (Check out [Molokai for Vim](#molokai))
 * Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
 
-```
+```shell
 colorscheme molokai
+```
+
+## Change Key Binding
+### Using Ctrl+C / Ctrl+X / Ctrl+V for Copy, Cut and Paste
+* Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
+
+```
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+
+```
+
+## Change Default Font
+1. Open GVim
+2. Edit -> 'Select Font' -> Choose the font you want to use.
+3. : -> `set gfn` -> It will give the current font name and size.
+4. Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
+5. Use the font name got from `set gfn`
+
+    e.g.) If `set gfn` gives, `Monaco 11`
+
+    ```shell
+set gfn=Monaco\ 11
 ```

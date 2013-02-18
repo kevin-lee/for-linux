@@ -64,3 +64,21 @@ $ apt-get install vim-gnome
 ```
 colorscheme solarized
 ```
+
+### Monokai
+* Install it (Check out [Monokai for Monokai](#monokai))
+
+* Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
+
+```
+colorscheme Monokai
+```
+
+### Molokai
+* Install it (Check out [Molokai for Vim](#molokai))
+
+* Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
+
+```
+colorscheme molokai
+```

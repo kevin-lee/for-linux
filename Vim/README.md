@@ -48,6 +48,19 @@ set t_Co=256
 colorscheme molokai
 ```
 
+# GVim
 ## Intall GVim
 
+```shell
+$ apt-get install vim-gnome 
+```
 
+## Change Color Theme
+### Solarized
+* Install it (Check out [Solarized for Vim](#solarized))
+
+* Edit `/etc/vim/gvimrc` or `/etc/vim/gvimrc.local` or `~/.gvimrc`
+
+```
+colorscheme solarized
+```

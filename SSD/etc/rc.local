@@ -11,9 +11,11 @@
 #
 # By default this script does nothing.
 
-echo "*** rc.local ***" >> /var/log/trim.log
-echo "*** $(date -R) ***" >> /var/log/trim.log
-fstrim -v / >> /var/log/trim.log
-echo "" >> /var/log/trim.log
+LOG=/var/log/trim.log
+
+echo "*** rc.local ***" >> $LOG
+echo "*** $(date -R) ***" >> $LOG
+fstrim -v / >> $LOG
+echo "" >> $LOG
 
 exit 0

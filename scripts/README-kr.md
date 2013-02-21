@@ -1,25 +1,25 @@
-½ºÅ©¸³Æ®
+[English Version](README.md "English Version")
+ìŠ¤í¬ë¦½íŠ¸
 =======
 
-## µð½ºÅ© »ç¿ë·® º¸±â
+## ë””ìŠ¤í¬ ì‚¬ìš©ëŸ‰ ë³´ê¸°
 ```shell
 $ df -h 
 ```
 
-## µð½ºÅ© °ø°£ »ç¿ë·® º¸±â
+## ë””ìŠ¤í¬ ê³µê°„ ì‚¬ìš©ëŸ‰ ë³´ê¸°
 ```shell
 $ du -sh 
 ```
 
-* 1MBÀÌ»ó µÇ´Â Æú´õ¿Í ÆÄÀÏ ³ª¿­ÇÏ±â
+* 1MBì´ìƒ ë˜ëŠ” í´ë”ì™€ íŒŒì¼ ë‚˜ì—´í•˜ê¸°
 
 ```shell
 $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[M] | sort -n  
 ```
 
-* 1GBÀÌ»ó µÇ´Â Æú´õ¿Í ÆÄÀÏ ³ª¿­ÇÏ±â
+* 1GBì´ìƒ ë˜ëŠ” í´ë”ì™€ íŒŒì¼ ë‚˜ì—´í•˜ê¸°
 
 ```shell
 $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[G] | sort -n  
 ```
-

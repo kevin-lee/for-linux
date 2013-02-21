@@ -1,3 +1,4 @@
+[한국어 버전](README-kr.md "한국어 버전")
 Scripts
 =======
 

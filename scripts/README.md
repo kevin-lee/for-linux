@@ -23,3 +23,9 @@ $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[M] | sort -n
 ```shell
 $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[G] | sort -n  
 ```
+
+## Find files by size
+* Find all zip files which are bigger than 1MiB.
+```shell
+$ find . -type f -size +1M -name "*.zip" -exec ls -lh {} \; | sort -k 5 -n 
+```

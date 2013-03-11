@@ -23,3 +23,10 @@ $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[M] | sort -n
 ```shell
 $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[G] | sort -n  
 ```
+
+## 사이즈로 파일 찾기
+* 1MiB보다 큰 ZIP 파일들 모두 찾기.
+
+```shell
+$ find . -type f -size +1M -name "*.zip" -exec ls -lh {} \; | sort -k 5 -n 
+```

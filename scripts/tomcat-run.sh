@@ -36,8 +36,14 @@ then
   exit
 fi
 
-stop() {
+RESULT=""
+checkProcess() {
   RESULT="`ps aux | egrep -vw 'egrep|'$0 | egrep $TOMCAT_PROCESS_KEYWORD`"
+  return 0
+}
+
+stop() {
+  checkProcess
 
   if [ -n "$RESULT" ]
   then
@@ -45,14 +51,12 @@ stop() {
 
     echo -e "\nStopping Tomcat..."
 
-    # RESULT="`ps aux | egrep -vw 'egrep|tail|'$0 | egrep $TOMCAT_PROCESS_KEYWORD`"
-    RESULT="`ps aux | egrep -vw 'egrep|'$0 | egrep $TOMCAT_PROCESS_KEYWORD`"
+    checkProcess
     RESULT=`echo $RESULT`
     while [ -n "$RESULT" ]
     do
       sleep 1
-      # RESULT="`ps aux | egrep -vw 'egrep|tail|'$0 | egrep $TOMCAT_PROCESS_KEYWORD`"
-      RESULT="`ps aux | egrep -vw 'egrep|'$0 | egrep $TOMCAT_PROCESS_KEYWORD`"
+      checkProcess
       RESULT=`echo $RESULT`
     done
 
@@ -64,7 +68,7 @@ stop() {
 
 start() {
 
-  RESULT="`ps aux | egrep -vw 'egrep|'$0 | egrep $TOMCAT_PROCESS_KEYWORD`"
+  checkProcess
 
   if [ -n "$RESULT" ]
   then

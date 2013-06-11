@@ -1,7 +1,7 @@
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
-alias update='apt-get update'
-alias upgrade='apt-get upgrade'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
 alias sshnp='ssh -o PubkeyAuthentication=no'
 alias scpnp='scp -o PubkeyAuthentication=no'
 
@@ -11,9 +11,11 @@ alias killflash='kill -9 `ps aux | grep flash | grep -v grep | awk "{ print \\$2
 
 alias psjava='ps aux |  grep -v grep | grep java'
 alias tomcatlog='tail -f -n 200 /path/to/TOMCAT_HOME/logs/catalina.out'
-alias tomcat='/etc/init.d/tomcat'
-alias ngx='/etc/init.d/nginx'
-alias ap2='/etc/init.d/apache2'
+alias tomcat='sudo /etc/init.d/tomcat'
+alias ngx='sudo /etc/init.d/nginx'
+alias ap2='sudo /etc/init.d/apache2'
+
+alias setup-scala='sudo ~/Documents/my-scripts/setup-scala.sh'
 
 gitpullall()
 {

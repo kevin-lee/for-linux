@@ -12,7 +12,9 @@ TOMCAT_HOME="/path/to/tomcat"
 
 TOMCAT_SH="/etc/init.d/tomcat"
 
-TOMCAT_PROCESS_KEYWORD="$TOMCAT_HOME/bin/"
+# If you have more than one Tomcat instance running, you probably want to use another keyword such as the home or bin directory of each Tomcat.
+TOMCAT_PROCESS_KEYWORD="org.apache.catalina.startup.Bootstrap"
+# TOMCAT_PROCESS_KEYWORD="$TOMCAT_HOME/bin/"
 
 
 if [ ! -f "$TOMCAT_SH" ]

@@ -40,6 +40,7 @@ gitpullall()
       git pull $remote master
       echo ""
     fi
+    should_ignore=-1
   done
 }
 

@@ -105,3 +105,16 @@ imap <C-v> <C-r><C-o>+
     ```shell
 set gfn=Monaco\ 11
 ```
+
+## Change Tab Size
+1. Open `/etc/vim/vimrc` or `/etc/vim/vimrc.local` or `~/.vimrc`
+2. Add the following line
+
+   ```
+set tabstop=SIZE
+```
+   e.g.)
+```
+set tabstop=2
+```
+

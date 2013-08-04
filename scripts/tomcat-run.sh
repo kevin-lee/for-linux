@@ -8,6 +8,8 @@
 ## http://lckymn.com                         ##
 ###############################################
 
+THIS_SCRIPT_NAME="$(basename $0)"
+
 TOMCAT_HOME="/path/to/tomcat"
 
 TOMCAT_SH="/etc/init.d/tomcat"
@@ -32,9 +34,9 @@ then
   echo "restart"
   echo ""
   echo "e.g.)"
-  echo "$0 start "
-  echo "$0 stop "
-  echo "$0 restart "
+  echo "$THIS_SCRIPT_NAME start "
+  echo "$THIS_SCRIPT_NAME stop "
+  echo "$THIS_SCRIPT_NAME restart "
   exit
 fi
 

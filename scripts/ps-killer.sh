@@ -8,6 +8,8 @@
 ## http://lckymn.com                       ##
 #############################################
 
+THIS_SCRIPT_NAME="$(basename $0)"
+
 LINES1="----------------------------------------------------------"
 LINES2="=========================================================="
 
@@ -62,7 +64,7 @@ if [ -n "$RESULT" ]
 else
   echo "Please enter a process name."
   echo "e.g.) to kill a flash player"
-  echo "$0 flash"
+  echo "$THIS_SCRIPT_NAME flash"
 fi
 
 exit

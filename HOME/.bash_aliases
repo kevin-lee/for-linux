@@ -9,6 +9,7 @@ alias psflash='ps aux | grep flash | grep -v grep | awk "{ print \$2; }"'
 alias killflash='kill -9 `ps aux | grep flash | grep -v grep | awk "{ print \\$2; }"`'
 # alias killflash="kill -9 \`ps aux | grep flash | grep -v grep | awk '{ print \$2; }'\`"
 
+alias psaux='ps aux | grep -v "grep --color=auto" | grep'
 alias psjava='ps aux |  grep -v grep | grep java'
 alias tomcatlog='tail -f -n 200 /path/to/TOMCAT_HOME/logs/catalina.out'
 alias tomcat='sudo /etc/init.d/tomcat'

@@ -32,14 +32,20 @@ gitpullall()
 
     for ignore in $repos_to_ignore
       do
-        [ "$remote" == "$ignore" ] && should_ignore=1 || :
+			if [ "$remote" == "$ignore" ]
+			then
+			  should_ignore=1
+			  break
+			fi
     done
 
     if [ "$should_ignore" == "-1" ]
       then
       echo "running: git pull $remote master"
-      git pull $remote master
+      git pull "$remote" master
       echo ""
+    else
+      echo "$remote is ignored."
     fi
     should_ignore=-1
   done

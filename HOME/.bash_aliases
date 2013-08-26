@@ -32,11 +32,11 @@ gitpullall()
 
     for ignore in $repos_to_ignore
       do
-			if [ "$remote" == "$ignore" ]
-			then
-			  should_ignore=1
-			  break
-			fi
+      if [ "$remote" == "$ignore" ]
+      then
+        should_ignore=1
+        break
+      fi
     done
 
     if [ "$should_ignore" == "-1" ]

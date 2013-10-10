@@ -7,7 +7,7 @@ Scripts
 $ df -h 
 ```
 
-## estimate file space usage
+## Estimate file space usage
 ```bash
 $ du -sh 
 ```
@@ -55,3 +55,28 @@ bash
 $ echo $SHELL 
 /bin/bash
 ```
+
+## Resizing Image using [ImageMagick](http://www.imagemagick.org/ "ImageMagick")
+* Resize all PNG files in the current directory.
+
+```bash
+# size: 300x150 (But it will preserve the aspect ratio of the image.)
+$ for file in *.png; do convert $file -resize 300x150 thumbnail-$file; done 
+```
+
+```bash
+# size: 300x150 (It will ignore the aspect ratio and
+# resize it 300 pixels in width and 150 pixels in height.)
+$ for file in *.png; do convert $file -resize 300x150 thumbnail-$file; done 
+```
+
+```bash
+# set width to 300 pixels
+$ for file in *.png; do convert $file -resize 300 thumbnail-$file; done 
+```
+
+```bash
+# set height to 150 pixels
+$ for file in *.png; do convert $file -resize x150 thumbnail-$file; done 
+```
+

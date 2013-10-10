@@ -55,3 +55,28 @@ bash
 $ echo $SHELL 
 /bin/bash
 ```
+
+## [ImageMagick](http://www.imagemagick.org/ "ImageMagick")을 이용한 이미지 크기변환
+* 현재 디렉토리에 있는 PNG 파일의 이미지 크기 모두 변환하기.
+
+```bash
+# 크기: 300x150 (하지만 원본 이미지의 크기 비율을 유지한다.)
+$ for file in *.png; do convert $file -resize 300x150 thumbnail-$file; done 
+```
+
+```bash
+# 크기: 300x150 (원본 이미지의 크기 비율을 무시하고
+# 가로 300픽셀, 세로 150픽셀의 크기로 변환한다.)
+$ for file in *.png; do convert $file -resize 300x150 thumbnail-$file; done 
+```
+
+```bash
+# 가로 300픽셀의 이미지로 변환.
+$ for file in *.png; do convert $file -resize 300 thumbnail-$file; done 
+```
+
+```bash
+# 세로 150픽셀의 이미지로 변환
+$ for file in *.png; do convert $file -resize x150 thumbnail-$file; done 
+```
+

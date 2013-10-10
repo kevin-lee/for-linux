@@ -60,12 +60,12 @@ $ echo $SHELL
 * Resize all PNG files in the current directory.
 
 ```bash
-# size: 300x150 (But it will preserve the aspect ratio of the image.)
+# size: 300x150 (But it will preserve the aspect ratio of the source image.)
 $ for file in *.png; do convert $file -resize 300x150 thumbnail-$file; done 
 ```
 
 ```bash
-# size: 300x150 (It will ignore the aspect ratio and
+# size: 300x150 (It will ignore the aspect ratio of the source image and
 # resize it 300 pixels in width and 150 pixels in height.)
 $ for file in *.png; do convert $file -resize 300x150 thumbnail-$file; done 
 ```

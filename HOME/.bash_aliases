@@ -20,7 +20,7 @@ alias setup-scala='sudo ~/Documents/my-scripts/setup-scala.sh'
 
 gitpullall()
 {
-  repos_to_ignore="origin github"
+  repos_to_ignore="origin"
   should_ignore=-1
 
   echo "running: git pull"
@@ -29,21 +29,38 @@ gitpullall()
 
   for remote in `git remote`
     do
-
+    echo "=================================="
+    echo "Remote: $remote"
+    echo "----------------------------------"
     for ignore in $repos_to_ignore
       do
       [ "$remote" == "$ignore" ] && { should_ignore=1; break; } || :
     done
 
-    if [ "$should_ignore" == "-1" ]
+    if [ "$should_ignore" = "-1" ]
       then
-      echo "running: git pull $remote master"
-      git pull "$remote" master
-      echo ""
+      git branch -r | grep -s "^[[:space:]]\+$remote/" 2>&1 > /dev/null || {
+        echo "No info of the remote repo named '$remote' is found."
+        echo "So $remote will be fetched."
+        echo "running: git fetch $remote"
+        git fetch "$remote"
+        echo ""
+      }
+      THIS_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
+      if git branch -r | grep -sw "$remote/$THIS_BRANCH_NAME" 2>&1 > /dev/null ; then
+        echo "running: git pull $remote $THIS_BRANCH_NAME"
+        git pull "$remote" "$THIS_BRANCH_NAME"
+      else
+        echo "$THIS_BRANCH_NAME branch does not exist on the remote called '$remote'."
+        echo "So $remote will not be pulled from $remote."
+      fi
     else
-      echo "$remote is ignored."
+      echo "$remote is on the ignored list so ignore it."
+      echo "Ignored: $remote"
     fi
     should_ignore=-1
+    echo "=================================="
+    echo ""
   done
 }
 

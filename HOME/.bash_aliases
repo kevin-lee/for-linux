@@ -1,5 +1,7 @@
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
+alias ls='ls -G'
+
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias sshnp='ssh -o PubkeyAuthentication=no'
@@ -37,16 +39,16 @@ gitpullall()
       [ "$remote" == "$ignore" ] && { should_ignore=1; break; } || :
     done
 
-    if [ "$should_ignore" = "-1" ]
+    if [ "$should_ignore" == "-1" ]
       then
-      git branch -r | grep -s "^[[:space:]]\+$remote/" 2>&1 > /dev/null || {
+      THIS_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
+      git branch -r | grep -s "^[[:space:]]\+$remote/$THIS_BRANCH_NAME$" 2>&1 > /dev/null || git branch -r | grep -s "^[[:space:]]\+$remote/$THIS_BRANCH_NAME""[[:space:]]\+" 2>&1 > /dev/null || {
         echo "No info of the remote repo named '$remote' is found."
         echo "So $remote will be fetched."
         echo "running: git fetch $remote"
         git fetch "$remote"
         echo ""
       }
-      THIS_BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
       if git branch -r | grep -sw "$remote/$THIS_BRANCH_NAME" 2>&1 > /dev/null ; then
         echo "running: git pull $remote $THIS_BRANCH_NAME"
         git pull "$remote" "$THIS_BRANCH_NAME"
@@ -63,7 +65,6 @@ gitpullall()
     echo ""
   done
 }
-
 
 
 PS1="\n\[\e[30;1m\]\[\016\]-\[\017\](\[\e[34;1m\]\u@\h\[\e[30;1m\])-(\[\e[34;1m\]\j\[\e[30;1m\])-(\[\e[34;1m\]\@ \d\[\e[30;1m\])->\[\e[30;1m\]\n-(\[\e[32;1m\]\w\[\e[30;1m\])-(\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\e[30;1m\])\n\[\e[0m\]$ "

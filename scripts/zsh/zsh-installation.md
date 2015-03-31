@@ -1,4 +1,6 @@
+# Installation
 
+## For Ubuntu Linux
 ```shell
 sudo apt-get update && sudo apt-get install zsh 
 ```
@@ -23,6 +25,36 @@ Change the default shell to z-shell
 ```shell
 chsh -s /bin/zsh 
 ```
+
+## For Mac OSX
+
+```shell
+brew update 
+brew install zsh
+```
+
+Install oh-my-zsh from https://github.com/robbyrussell/oh-my-zsh 
+
+* Using curl
+
+```shell
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+```
+OR
+
+* Using wget
+
+```shell
+wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+```
+
+Change the default shell to z-shell
+
+```shell
+chsh -s /usr/local/bin/zsh 
+```
+
+
 ## Install Powerline Fonts for `agnoster` theme
 **It is not necessary for Server**
 

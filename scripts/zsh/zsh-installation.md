@@ -59,6 +59,7 @@ chsh -s /usr/local/bin/zsh
 **It is not necessary for Server**
 
 ```shell
+cd to/wherever/you/like 
 git clone https://github.com/powerline/fonts powerline-fonts 
 cd powerline-fonts 
 ./install.sh 

@@ -11,6 +11,12 @@ alias psflash='ps aux | grep flash | grep -v grep | awk "{ print \$2; }"'
 alias killflash='kill -9 `ps aux | grep flash | grep -v grep | awk "{ print \\$2; }"`'
 # alias killflash="kill -9 \`ps aux | grep flash | grep -v grep | awk '{ print \$2; }'\`"
 
+alias gitlog='git log --decorate=full --graph'
+alias gitlogfull='git log --decorate=full --graph --pretty=fuller'
+
+alias git-push-remote-add='git remote set-url origin --add'
+alias git-pull-remote-add='git remote add'
+
 alias psaux='ps aux | grep -v "grep --color=auto" | grep'
 alias psjava='ps aux |  grep -v grep | grep java'
 alias tomcatlog='tail -f -n 200 /path/to/TOMCAT_HOME/logs/catalina.out'

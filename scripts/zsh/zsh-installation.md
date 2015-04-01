@@ -65,7 +65,7 @@ cd powerline-fonts
 ./install.sh 
 ```
 
-* Open `~/.zshrc` and change (** Do only this on Server**)
+* Open `~/.zshrc` and change (**Do only this on Server**)
 
 ```shell
 ZSH_THEME="robbyrussell"
@@ -75,6 +75,7 @@ to
 ```shell
 ZSH_THEME="agnoster"
 ```
+
 * Now, you need to change the terminal font to one of powerline ones.
 
 e.g.) Mac OS X

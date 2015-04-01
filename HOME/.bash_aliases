@@ -2,23 +2,28 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
 alias ls='ls -G'
 
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
 alias sshnp='ssh -o PubkeyAuthentication=no'
 alias scpnp='scp -o PubkeyAuthentication=no'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias download4upgrade='sudo apt-get -d upgrade'
+alias install='sudo apt-get install'
+alias remove='sudo apt-get remove'
+alias purge='sudo apt-get purge'
 
 alias psflash='ps aux | grep flash | grep -v grep | awk "{ print \$2; }"'
 alias killflash='kill -9 `ps aux | grep flash | grep -v grep | awk "{ print \\$2; }"`'
 # alias killflash="kill -9 \`ps aux | grep flash | grep -v grep | awk '{ print \$2; }'\`"
 
+alias psaux='ps aux | grep -v "grep --color=auto" | grep'
+alias psjava='ps aux |  grep -v grep | grep java'
+
 alias gitlog='git log --decorate=full --graph'
 alias gitlogfull='git log --decorate=full --graph --pretty=fuller'
+alias gittotallines='git ls-files | xargs wc -l'
 
 alias git-push-remote-add='git remote set-url origin --add'
 alias git-pull-remote-add='git remote add'
-
-alias psaux='ps aux | grep -v "grep --color=auto" | grep'
-alias psjava='ps aux |  grep -v grep | grep java'
 
 alias ngx='sudo /etc/init.d/nginx'
 

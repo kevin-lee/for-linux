@@ -75,6 +75,11 @@ to
 ```shell
 ZSH_THEME="agnoster"
 ```
+* Now, you need to change the terminal font to one of powerline ones.
+
+e.g.) Mac OS X
+![Mac OS X Terminal: Use Powerline Font](osx-terminal-change-font-to-powerline.png)
+
 
 ## Install `zsh-syntax-highlighting` plugin
 

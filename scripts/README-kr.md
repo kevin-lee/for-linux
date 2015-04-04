@@ -31,7 +31,15 @@ $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[G] | sort -n
 $ find . -type f -size +1M -name "*.zip" -exec ls -lh {} \; | sort -k 5 -n 
 ```
 
-## 현재 사용중인 쉘 알아내기
+## 원하는 단어가 포함된 파일 검색하기
+* 현재 위치에서 원하는 단어가 포함된 모든 파일 찾기.
+
+```bash
+$ for file in `find . -type f`; do grep -H "원하는단어" $file; done 
+```
+
+
+## 내가 현재 사용중인 쉘 알아내기
 * 알아내는 방법이 여러가지.
  * `echo $0`
 

@@ -31,6 +31,14 @@ $ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[G] | sort -n
 $ find . -type f -size +1M -name "*.zip" -exec ls -lh {} \; | sort -k 5 -n 
 ```
 
+## Searching files containing word
+* In the current location, Searching all files which contain the given word.
+
+```bash
+$ for file in `find . -type f`; do grep -H "WORD_HERE" $file; done 
+```
+
+
 ## Find out What Shell I'm Using
 * There are several ways to find it out.
  * `echo $0`

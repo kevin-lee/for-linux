@@ -89,6 +89,15 @@ gitpullall()
   done
 }
 
+search_file() {
+  if [ ! -n "$1" ]
+    then
+    echo "Please enter a word to search"
+    exit
+  fi
+  for file in `find . -type f`; do grep -H "$1" $file; done
+}
+
 
 export JDK6_HOME=/usr/lib/jvm/java-6-openjdk
 export JDK7_HOME=/usr/lib/jvm/java-7-openjdk

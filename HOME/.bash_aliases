@@ -4,6 +4,7 @@ alias ls='ls -G'
 
 alias sshnp='ssh -o PubkeyAuthentication=no'
 alias scpnp='scp -o PubkeyAuthentication=no'
+
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias download4upgrade='sudo apt-get -d upgrade'
@@ -77,6 +78,15 @@ gitpullall()
     echo "=================================="
     echo ""
   done
+}
+
+search_file() {
+  if [ ! -n "$1" ]
+    then
+    echo "Please enter a word to search"
+    exit
+  fi
+  for file in `find . -type f`; do grep -H "$1" $file; done
 }
 
 

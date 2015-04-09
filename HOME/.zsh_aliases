@@ -33,7 +33,7 @@ alias psjava='ps aux |  grep -v grep | grep java'
 
 alias gitlog='git log --decorate=full --graph'
 alias gitlogfull='git log --all --decorate=full --graph --pretty=fuller'
-alias gittotallines='git ls-files | xargs wc -l'
+alias gittotallines='git ls-files | xargs file | grep ".*: .* text" | sed "s;\(.*\): .* text.*;\1;" | xargs wc -l'
 
 alias git-push-remote-add='git remote set-url origin --add'
 alias git-pull-remote-add='git remote add'

@@ -26,6 +26,9 @@ alias gittotallines='git ls-files | xargs file | grep ".*: .* text" | sed "s;\(.
 alias git-push-remote-add='git remote set-url origin --add'
 alias git-pull-remote-add='git remote add'
 
+alias git-checkout-from-multiple-remote-repos='echo -e "\ngit checkout -b <localBranch> <remote>/<remoteBranch>\n  e.g.)\n  git checkout -b some-branch origin/some-branch\n"'
+alias git-pull-branch-without-checkout='echo -e "\n\e[0;31mWARNING: only for fast-forward\e[m\n\ngit fetch <remote> <sourceBranch>:<destinationBranch>\n  e.g.)\n  git fetch origin master:master\n"'
+
 alias ngx='sudo /etc/init.d/nginx'
 
 alias tomcatlog='tail -f -n 200 /path/to/TOMCAT_HOME/logs/catalina.out'

@@ -8,7 +8,7 @@
 ## http://lckymn.com                         ##
 ###############################################
 
-SCALA_VERSION="2.11.6"
+SCALA_VERSION="2.11.7"
 SBT_VERSION="0.13.8"
 
 # sudo apt-get remove scala-library scala

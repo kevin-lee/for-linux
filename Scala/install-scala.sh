@@ -9,7 +9,7 @@
 ###############################################
 
 SCALA_VERSION="2.11.7"
-SBT_VERSION="0.13.8"
+SBT_VERSION="0.13.9"
 
 # sudo apt-get remove scala-library scala
 

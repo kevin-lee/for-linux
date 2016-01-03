@@ -20,17 +20,17 @@ ctrl+B, C
 ctrl+B, 0~9
   ```
 
-* Select a session from the list (Use left and right allow keys to see the list)
+* Select a session from the list (Use the left and right arrow keys to see the list)
   ```shell
 ctrl+B, s
   ```
 
 * Terminate the session
-```
+  ```
 ctrl+D
-```
+  ```
 
-* scroll
-```
+* scroll (Use the up and down arrow keys)
+  ```
 ctrl + b + [
-```
+  ```

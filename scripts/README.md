@@ -15,13 +15,13 @@ $ du -sh
 * List all the folders and files which are equal to or greater than 1MB.
 
 ```bash
-$ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[M] | sort -n  
+$ du -sh .[^.]* * | egrep -e "^[0-9]*[.]?[0-9]*[M]" | sort -n  
 ```
 
 * List all the folders and files which are equal to or greater than 1GB.
 
 ```bash
-$ du -sh .[^.]* * | egrep -e ^[0-9]*[.]?[0-9]*[G] | sort -n  
+$ du -sh .[^.]* * | egrep -e "^[0-9]*[.]?[0-9]*[G]" | sort -n  
 ```
 
 ## Find files by size

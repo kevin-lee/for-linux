@@ -10,14 +10,14 @@ Install oh-my-zsh from https://github.com/robbyrussell/oh-my-zsh
 * Using curl
 
 ```shell
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 ```
 OR
 
 * Using wget
 
 ```shell
-wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 
 ```
 
 Change the default shell to z-shell
@@ -38,14 +38,14 @@ Install oh-my-zsh from https://github.com/robbyrussell/oh-my-zsh
 * Using curl
 
 ```shell
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 ```
 OR
 
 * Using wget
 
 ```shell
-wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 
 ```
 
 Change the default shell to z-shell

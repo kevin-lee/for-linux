@@ -4,6 +4,8 @@ alias ls='ls -G'
 
 alias sshnp='ssh -o PubkeyAuthentication=no'
 alias scpnp='scp -o PubkeyAuthentication=no'
+alias ssh-p='ssh -p'
+alias scp-p='scp -P'
 
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'

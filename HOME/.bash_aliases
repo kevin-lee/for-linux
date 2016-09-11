@@ -24,6 +24,8 @@ alias psjava='ps aux |  grep -v grep | grep java'
 alias du-mbs='du -sh .[^.]* * | egrep -e "^[0-9]*[.]?[0-9]*[M]" | sort -n' 
 alias du-gbs='du -sh .[^.]* * | egrep -e "^[0-9]*[.]?[0-9]*[G]" | sort -n' 
 
+alias ss-ls='ss -lpnt' 
+
 alias gitlog='git log --decorate=full --graph'
 alias gitlogfull='git log --decorate=full --graph --pretty=fuller'
 alias gittotallines='git ls-files | xargs file | grep ".*: .* text" | sed "s;\(.*\): .* text.*;\1;" | xargs wc -l'

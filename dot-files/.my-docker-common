@@ -1,0 +1,41 @@
+alias dk-versions='echo -e "\e[34mDocker version:\e[0m"; docker --version; echo -e "\n\e[34mDocker Compose version:\e[0m"; docker-compose --version; echo -e "\n\e[34mDocker Machine version:\e[0m"; docker-machine --version; echo ""'
+
+# Docker {
+
+# For Mac OS X
+alias dk-data='cd ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux'
+
+alias dk='docker'
+
+alias dk-dangling='docker images --filter dangling=true'
+
+alias dk-stop-all='docker stop $(docker ps -q)'
+alias dk-clean-images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias dk-clean-images-all='docker rmi $(docker images -a -q)'
+alias dk-clean-ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+
+dk-ip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' $@ || echo -e '\n\e[31m[error] Please enter container ID\e[0m\ne.g.)\n$ \e[32mdk-ip 33dc22bb443c\n\e[0m'
+}
+
+dk-bash-to() {
+  docker exec -i -t "$@" /bin/bash
+}
+
+
+# } Docker
+
+
+# Docker Machine {
+alias dkm='docker-machine'
+
+alias dkm-init='docker-machine create --driver virtualbox default'
+
+# } Docker Machine
+
+
+# Docker Compose {
+
+alias dkc='docker-compose'
+
+# } Docker Compose

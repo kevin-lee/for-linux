@@ -3,9 +3,12 @@
 ## For Docker,
 
 Add following lines to `.bashrc` or `.zshrc`.
+
+**Currently it's only for z-shell**
+
 ```shell
-if [ -f ~/dot-files/.my-docker-common ]; then
-  . ~/dot-files/.my-docker-common
+if [ -f ~/dot-files/zsh/.my-docker-common ]; then
+  . ~/dot-files/zsh/.my-docker-common
 fi
 ```
 

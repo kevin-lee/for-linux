@@ -1,8 +1,8 @@
 
 ## Git {
 
-alias gitlog='git log --decorate=full --graph'
-alias gitlogfull='git log --decorate=full --graph --pretty=fuller'
+alias gitlog='git log --decorate=full --graph --stat'
+alias gitlogfull='git log --decorate=full --graph --pretty=fuller --stat'
 alias gittotallines='git ls-files | xargs file | grep ".*: .* text" | sed "s;\(.*\): .* text.*;\1;" | xargs wc -l'
 
 alias git-push-remote-add='git remote set-url origin --add'
@@ -68,7 +68,7 @@ gitpullall()
 }
 
 
-git-fetch-upstream() {
+git_fetch_upstream() {
   NC='\033[0m'
   LIGHT_BLUE='\033[1;34m'
   LIGHT_GREEN='\033[1;32m'
@@ -132,11 +132,10 @@ git_find_file() {
       branch_name="$3"
     fi
 
-    git archive --format=tar --remote="$1" "$3" "$2" >/dev/null && echo "FOUND" || echo "NOT THERE";
+    git archive --format=tar --remote="$1" $branch_name "$2" >/dev/null && echo "FOUND" || echo "NOT THERE";
   fi
 
 }
 
 
 ## } Git
-

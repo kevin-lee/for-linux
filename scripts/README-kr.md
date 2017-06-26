@@ -41,25 +41,24 @@ $ for file in `find . -type f`; do grep -H "원하는단어" $file; done
 
 ## 내가 현재 사용중인 쉘 알아내기
 * 알아내는 방법이 여러가지.
- * `echo $0`
+* `echo $0`
 
-    ```bash
+```bash
 $ echo $0 
-bash
 ```
- * `ps -p $$ ` or `ps --no-headers -p $$ | awk '{ print $4; }'`<br>
 
-   ```bash
+* `ps -p $$ ` or `ps --no-headers -p $$ | awk '{ print $4; }'`<br>
+
+```bash
 $ ps -p $$ 
 3732 pts/6    00:00:00 bash
 ```
-    ```bash
+```bash
 $ ps --no-headers -p $$ | awk '{ print $4; }' 
-bash
 ```
- * `echo $SHELL`
+* `echo $SHELL`
 
-   ```bash
+```bash
 $ echo $SHELL 
 /bin/bash
 ```

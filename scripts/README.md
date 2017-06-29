@@ -41,25 +41,24 @@ $ for file in `find . -type f`; do grep -H "WORD_HERE" $file; done
 
 ## Find out What Shell I'm Using
 * There are several ways to find it out.
- * `echo $0`
+* `echo $0`
 
-    ```bash
+```bash
 $ echo $0 
-bash
 ```
- * `ps -p $$ ` or `ps --no-headers -p $$ | awk '{ print $4; }'`<br>
 
-   ```bash
+* `ps -p $$ ` or `ps --no-headers -p $$ | awk '{ print $4; }'`<br>
+
+```bash
 $ ps -p $$ 
 3732 pts/6    00:00:00 bash
 ```
-    ```bash
+```bash
 $ ps --no-headers -p $$ | awk '{ print $4; }' 
-bash
 ```
- * `echo $SHELL`
+* `echo $SHELL`
 
-   ```bash
+```bash
 $ echo $SHELL 
 /bin/bash
 ```

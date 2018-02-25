@@ -1,0 +1,33 @@
+if type exa >/dev/null 2>&1; then
+  alias ls0='command ls -G'
+  alias ll0='ls0 -l'
+  alias l0='ls0 -al'
+  alias ls='exa'
+else
+  alias ls='ls -G'
+fi
+
+alias sudos='sudo -s'
+
+alias psaux='ps aux | grep -v grep | grep'
+
+alias du-mbs='{ du -sh .[^.]* * || du -sh * } | egrep -e "^[ 0-9]*[.]?[0-9]*[M]" | sort -n'
+alias du-gbs='{ du -sh .[^.]* * || du -sh * } | egrep -e "^[ 0-9]*[.]?[0-9]*[G]" | sort -n'
+
+alias sshnp='ssh -o PubkeyAuthentication=no'
+alias scpnp='scp -o PubkeyAuthentication=no'
+alias ssh-p='ssh -p'
+alias scp-p='scp -P'
+
+search_file() {
+  if [ ! -n "$1" ]
+    then
+    echo "Please enter a word to search"
+    exit
+  fi
+
+  while read -r file
+  do
+    grep -H "$1" "${file}"
+  done <<< "$(find . -type f -exec grep -Iq . {} \; -and -print)"
+}

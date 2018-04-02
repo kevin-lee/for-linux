@@ -6,6 +6,11 @@ implicit class ToUnicode(val x: String) extends AnyVal {
   def encodeToUnicode: String = x.map(c => "\\u%04x".format(c.toInt)).mkString
 }
 
+implicit class BinaryToIntOrLong(private val sc: StringContext) extends AnyVal {
+  def b(args: Any*): Int = Integer.parseInt(sc.parts.mkString.replaceAllLiterally("_", ""), 2)
+  def B(args: Any*): Long = java.lang.Long.parseLong(sc.parts.mkString.replaceAllLiterally("_", ""), 2)
+}
+
 def printHelp(name: String, help: => Unit): Unit = {
   println(
     s"""========================

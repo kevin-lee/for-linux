@@ -21,6 +21,25 @@ alias git-ignore-case='git config --global core.ignorecase'
 
 alias git-clean-up-local-branches='git fetch --prune && git branch -r | awk '"'"'{print $1}'"'"' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '"'"'{print $1}'"'"' | xargs git branch -d'
 
+alias git-head-commit-id='git rev-parse HEAD'
+
+alias git-fixup='git commit --fixup'
+
+alias git-fixup-head='git-fixup "$(git-head-commit-id)"'
+
+show-git-autosquash()
+{
+  num_rex='^[0-9]+$'
+  if [ -z "$1" ] || ! [[ "$1" =~ $num_rex ]]
+  then
+    echo "Please enter the number of commits from HEAD"
+    echo "e.g.) gitAutosquash 2"
+    echo "runs git rebase -i --autosquash HEAD~2"
+  else
+    echo "git rebase -i --autosquash HEAD~$1"
+  fi
+}
+
 gitpullall()
 {
   repos_to_ignore="origin"

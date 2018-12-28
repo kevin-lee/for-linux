@@ -82,6 +82,9 @@ e.g.) Mac OS X
 
 ![Mac OS X Terminal: Use Powerline Font](osx-terminal-change-font-to-powerline.png)
 
+## FiraCode
+I also recommend [FiraCode](https://github.com/tonsky/FiraCode) font, which supports ligatures. Both macOS's Terminal and iTerm2 support ligatures. In iTerm2, Open `Preferences` (Cmd+,) -> `Profiles` tab -> Select the profile you're using -> Move to the `Text` tab -> Check the `Use ligatures` option.
+
 
 ## Install `zsh-syntax-highlighting` plugin
 

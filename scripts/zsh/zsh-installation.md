@@ -38,19 +38,20 @@ Install oh-my-zsh from https://github.com/robbyrussell/oh-my-zsh
 * Using curl
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 ```
 OR
 
 * Using wget
 
 ```shell
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 ```
 
 Change the default shell to z-shell
 
 ```shell
+# You don't need it for the new macOS
 chsh -s /usr/local/bin/zsh 
 ```
 

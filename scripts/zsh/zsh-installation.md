@@ -5,7 +5,7 @@
 sudo apt-get update && sudo apt-get install zsh 
 ```
 
-Install oh-my-zsh from https://github.com/robbyrussell/oh-my-zsh 
+Install oh-my-zsh from https://github.com/ohmyzsh/ohmyzsh 
 
 * Using curl
 
@@ -33,7 +33,7 @@ brew update
 brew install zsh
 ```
 
-Install oh-my-zsh from https://github.com/robbyrussell/oh-my-zsh 
+Install oh-my-zsh from https://github.com/ohmyzsh/ohmyzsh 
 
 * Using curl
 

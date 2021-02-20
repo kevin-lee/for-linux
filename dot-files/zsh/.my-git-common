@@ -27,17 +27,16 @@ alias git-fixup='git commit --fixup'
 
 alias git-fixup-head='git-fixup "$(git-head-commit-id)"'
 
-show-git-autosquash()
-{
-  num_rex='^[0-9]+$'
-  if [ -z "$1" ] || ! [[ "$1" =~ $num_rex ]]
-  then
-    echo "Please enter the number of commits from HEAD"
-    echo "e.g.) gitAutosquash 2"
-    echo "runs git rebase -i --autosquash HEAD~2"
-  else
-    echo "git rebase -i --autosquash HEAD~$1"
-  fi
+git-autosquash () {
+	num_rex='^[0-9]+$'
+	if [ -z "$1" ] || ! [[ "$1" =~ $num_rex ]]
+	then
+		echo "Please enter the number of commits from HEAD"
+		echo "e.g.) gitAutosquash 2"
+		echo "runs git rebase -i --autosquash HEAD~2"
+	else
+		git rebase -i --autosquash "HEAD~$1"
+	fi
 }
 
 gitpullall()

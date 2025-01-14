@@ -25,7 +25,8 @@ alias git-head-commit-id='git rev-parse HEAD'
 
 alias git-fixup='git commit --fixup'
 
-alias git-fixup-head='git-fixup "$(git-head-commit-id)"'
+# alias git-fixup-head='git-fixup "$(git-head-commit-id)"'
+alias git-fixup-head='git-fixup HEAD'
 
 git-autosquash () {
   num_rex='^[0-9]+$'
